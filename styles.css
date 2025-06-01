@@ -1,224 +1,361 @@
-*{
-  box-sizing: border-box;
-  margin:0;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  font-size: medium;
-  font-weight:bold;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-.main-container{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items:center;
-  height:100vh;
+:root {
+    --primary-color: #3b82f6;
+    --primary-dark: #2563eb;
+    --secondary-color: #f8fafc;
+    --text-color: #1e293b;
+    --border-color: #e2e8f0;
+    --success-color: #22c55e;
+    --danger-color: #ef4444;
+    --border-radius: 12px;
+    --box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    --theme-switch-dark: #1e293b;
+    --theme-switch-light: #f8fafc;
 }
 
-body{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color:blanchedalmond;
+body {
+    margin: 0;
+    padding: 20px;
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-color);
 }
 
-.text-container{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+.main-container {
+    background: white;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    width: 95%;
+    max-width: 1200px;
+    min-height: 80vh;
 }
 
-.button-container{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 0px;
-  margin-bottom: 0px;
+.app-title {
+    text-align: center;
+    color: var(--text-color);
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    background: linear-gradient(to right, var(--primary-color), var(--primary-dark));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-.source-container,.target-container{
-  display: flex;
-  flex-direction: column;
-  flex:1;
-  justify-content: center;
-  margin: 5px;
+.text-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-bottom: 2rem;
 }
 
-.source-container{
-  align-items: flex-end;
+.source-container, .target-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
-.target-container{
-  align-items: flex-start;
+.input, .output, .romaji {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid var(--border-color);
+    border-radius: var(--border-radius);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    resize: none;
+    transition: border-color 0.3s ease;
 }
 
-#translate-button,#clear-button,#source-languages,#target-languages{
-  margin: 0px;
-  padding: 12px;
-  border-radius: 10px;
-  border-width: 3px;
+.input:focus, .output:focus, .romaji:focus {
+    outline: none;
+    border-color: var(--primary-color);
 }
 
-.input, .output {
-width: 70vh;
-height: 55vh;
-padding: 5px;
-margin-left:5px;
-margin-right: 5px;
-margin-bottom: 20px;
-margin-top: 15px;
-border-radius: 7px;
-border-width:medium;
-font-family:nirmala ui;
-font-size: x-large;
-font-weight:500;
-resize: none;
+.input {
+    height: 50vh;
+    background-color: white;
 }
 
-.dropdown{
-  display:flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: flex-end;
-  margin-bottom: 25px;
+.output {
+    height: 30vh;
+    background-color: var(--secondary-color);
 }
 
-.switch-button{
-  width: 45px;
-  height: 45px;
-  padding: 0;
-  margin-top:0px;
-  margin-bottom: 1px;
-  margin-left: 8px;
-  margin-right: 8px;
-  border:none;
-  border-radius:10px;
+.romaji {
+    height: 15vh;
+    background-color: var(--secondary-color);
+    font-family: 'Inter', sans-serif;
 }
 
-#switcher{
-  margin:0px;
-  padding:0px;
-  width:100%;
-  height:100%;
-  border-radius: 10px;
+button {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    font-weight: 500;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
-.switch-button:hover,#translate-button:hover,#clear-button:hover{
-  opacity: 0.8;
-  transform: scale(1.05);
-  cursor:pointer;
-}
-.switch-button:active{
-  opacity:1;
+#translate-button {
+    background-color: var(--success-color);
 }
 
-#source-languages,#target-languages{
-  background-color:azure;
-  padding: 8px;
+#clear-button {
+    background-color: var(--danger-color);
 }
 
-#translate-button{
-  background-color:rgb(46, 189, 46);
-}
-#clear-button{
-  background-color: rgb(215, 81, 81);
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--box-shadow);
 }
 
-@media screen and (max-height:600px) and (orientation: landscape) {
- *{
-      font-size:small;
-  }
-.main-container{
-  margin-top:0px;
-  width:630px;
-  height:60vh;
-}
-.text-container{
-  margin-left:50px;
-}
-.input,.output{
-  width:75vh;
-  height:45vh;
-  padding:5px;
-  margin-top:10px;
-  margin-right:10px;
-  font-size:small;
-}
-.dropdown{
-  margin-bottom:5px;
-  margin-top:50px;
-  
-}
-.source-container,.target-container{
-      margin-top:0;
-  margin-left:0;
-  margin-right:10px;
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: flex-end;
-  }
-#translate-button,#clear-button{
-  width:100px;
-  padding:5px;
-}
-.switch-button{
-  height:35px;
-}
-.attribution{
-  position:absolute;
-  top:20px;
-  height:30px;
-}
+button:active {
+    transform: translateY(0);
 }
 
-@media screen and (max-width: 500px) and (orientation: portrait){
-  *{
-      font-size:small;
-  }
-
-  .main-container{
-      
-      padding:10px;
-  }
-
-  .text-container{
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-  }
-
-  .dropdown{
-    margin-top:10px;
-    margin-bottom:0px;
-  }
-
-.switch-button{
-  height:40px;
-}
-.source-container,.target-container{
-      align-items: center;
-  }
-
-.target-container{
-  padding-bottom:10px;
-  margin-bottom:10px;
-  margin-top:0px;
-}
-  .input,.output{
-      width: 45vh;
-      height: 32vh;
-      font-size: large;
-  }
+.button-group {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
 }
 
-.attribution {
-  position: absolute;
-  right: 20px;
-  bottom: 20px;
-  font-size: 0.8rem;
-  background-color: #7cc4eb;
-  padding: 8px;
-  border-radius: 5px;
+.speak-button {
+    background-color: var(--primary-color);
+}
+
+.speak-button:hover {
+    background-color: var(--primary-dark);
+}
+
+/* Theme Toggle */
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 100;
+}
+
+#theme-switch {
+    background: var(--primary-color);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    padding: 0;
+    justify-content: center;
+}
+
+/* Copy Button Styles */
+.output-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.copy-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: var(--primary-color);
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.copy-btn:hover {
+    opacity: 1;
+    transform: none;
+}
+
+/* Tablet Responsive */
+@media screen and (max-width: 1024px) {
+    .main-container {
+        padding: 1.5rem;
+        min-height: 90vh;
+    }
+
+    .app-title {
+        font-size: 2rem;
+    }
+
+    .input, .output {
+        font-size: 1rem;
+    }
+}
+
+/* Mobile Responsive Styles */
+@media screen and (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .main-container {
+        padding: 1rem;
+        width: 100%;
+        min-height: 100vh;
+    }
+
+    .text-container {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .app-title {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .input {
+        height: 35vh;
+        font-size: 16px; /* Prevent auto-zoom on iOS */
+    }
+
+    .output {
+        height: 25vh;
+        font-size: 16px;
+    }
+
+    .romaji {
+        height: 15vh;
+        font-size: 16px;
+    }
+
+    .button-group {
+        flex-direction: column;
+        gap: 0.5rem;
+        width: 100%;
+    }
+
+    button {
+        width: 100%;
+        padding: 0.8rem;
+        justify-content: center;
+    }
+
+    .copy-btn {
+        width: 35px;
+        height: 35px;
+        top: 5px;
+        right: 5px;
+    }
+
+    .theme-toggle {
+        top: 10px;
+        right: 10px;
+    }
+
+    #theme-switch {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+/* Small Mobile Devices */
+@media screen and (max-width: 480px) {
+    .app-title {
+        font-size: 1.2rem;
+    }
+
+    .input, .output, .romaji {
+        padding: 0.8rem;
+    }
+
+    .input {
+        height: 30vh;
+    }
+
+    .output {
+        height: 20vh;
+    }
+
+    .romaji {
+        height: 12vh;
+    }
+
+    button {
+        padding: 0.6rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Landscape Mode */
+@media screen and (max-height: 600px) and (orientation: landscape) {
+    .main-container {
+        min-height: auto;
+        padding: 0.8rem;
+    }
+
+    .input {
+        height: 25vh;
+    }
+
+    .output {
+        height: 20vh;
+    }
+
+    .romaji {
+        height: 10vh;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text-color: #f8fafc;
+        --border-color: #334155;
+        --secondary-color: #1e293b;
+    }
+
+    body {
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    }
+
+    .main-container {
+        background: #0f172a;
+    }
+
+    .input {
+        background-color: #1e293b;
+        color: #f8fafc;
+    }
+
+    .output, .romaji {
+        background-color: #1e293b;
+        color: #f8fafc;
+    }
+}
+
+.dark-mode {
+    --text-color: #f8fafc;
+    --border-color: #334155;
+    --secondary-color: #1e293b;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+}
+
+.dark-mode .main-container {
+    background: #0f172a;
+}
+
+.dark-mode .input,
+.dark-mode .output,
+.dark-mode .romaji {
+    background-color: #1e293b;
+    color: #f8fafc;
 }
