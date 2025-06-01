@@ -1,57 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EigoNihongo - English to Japanese Translator</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <div class="main-container">
-    <h1 class="app-title">EigoNihongo – English to Japanese Translator</h1>
-
-    <div class="dropdown">
-      <select id="source-languages">
-        <option value="en" selected>English</option>
-      </select>
-
-      <button class="switch-button" title="Swap Languages" disabled>
-        <img id="switcher" src="https://creazilla-store.fra1.digitaloceanspaces.com/emojis/57902/left-right-arrow-emoji-clipart-sm.png" alt="switch icon" />
-      </button>
-
-      <select id="target-languages">
-        <option value="ja" selected>Japanese</option>
-      </select>
-    </div>
-
-    <div class="text-container">
-      <div class="source-container">
-        <textarea class="input" placeholder="Enter English text here..."></textarea>
-        <button id="translate-button">Translate</button>
-      </div>
-
-      <div class="target-container">
-        <textarea class="output" placeholder="Translation will appear here..." readonly></textarea>
-
-        <!-- 🔊 Speak Button -->
-        <button id="speak-button">🔊 Speak (Japanese)</button>
-
-        <!-- 🌐 Google Translate Romanji Link -->
-        <a id="romanjiLink" href="#" target="_blank">View Romanji on Google Translate</a>
-
-        <!-- 🆕 Romanji Box -->
-        <div class="romanji-box">
-          <label for="romanjiOutput">Romanji (Pronunciation):</label>
-          <textarea id="romanjiOutput" placeholder="Romanji will appear here..." readonly></textarea>
+<html>
+    <head>
+        <title>MyTranslator</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+        <script src="https://unpkg.com/wanakana"></script>
+    </head>
+    <body>
+        <div class="theme-toggle">
+            <button id="theme-switch">
+                <i class="fas fa-moon"></i>
+            </button>
         </div>
+        <div class="main-container">
+            <h1 class="app-title">English to Japanese Translator</h1>
+            
+            <div class="text-container">
+                <div class="source-container">
+                    <textarea class="input" placeholder="Enter English text to translate..."></textarea>
+                    <div class="button-group">
+                        <button id="translate-button">
+                            <i class="fas fa-language"></i> Translate
+                        </button>
+                        <button id="speak-input" class="speak-button">
+                            <i class="fas fa-volume-up"></i> Speak English
+                        </button>
+                    </div>
+                </div>
 
-        <button id="clear-button">Clear Text</button>
-      </div>
-    </div>
-
-    <p class="attribution">By Ahin Satheesh • <a href="https://github.com/ahinsatheesh1/english-japanese-translator" target="_blank">GitHub</a></p>
-  </div>
-
-  <script src="translatorScript.js"></script>
-</body>
+                <div class="target-container">
+                    <div class="output-wrapper">
+                        <textarea class="output" placeholder="Japanese translation will appear here..." readonly></textarea>
+                        <button class="copy-btn" data-target="output">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="output-wrapper">
+                        <textarea class="romaji" placeholder="Romaji will appear here..." readonly></textarea>
+                        <button class="copy-btn" data-target="romaji">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="button-group">
+                        <button id="speak-output" class="speak-button">
+                            <i class="fas fa-volume-up"></i> Speak Japanese
+                        </button>
+                        <button id="clear-button">
+                            <i class="fas fa-trash-alt"></i> Clear
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="translatorScript.js"></script>
+    </body>
 </html>
+
+<!-- switch button image src: https://creazilla-store.fra1.digitaloceanspaces.com/emojis/57902/left-right-arrow-emoji-clipart-sm.png -->
