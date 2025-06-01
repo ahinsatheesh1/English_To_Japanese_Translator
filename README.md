@@ -3,7 +3,8 @@
 A modern web-based English to Japanese translator with Romaji conversion and text-to-speech capabilities.
 
 [Translator Screenshot]
-![Uploading image.png…]()
+![image](https://github.com/user-attachments/assets/d796d52f-e101-4b58-8fc5-1aa472c7a233)
+
 
 
 
