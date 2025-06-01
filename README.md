@@ -1,40 +1,104 @@
-# Language Translator Web Application
-* 10 languages are supported by default:
-  * Chinese
-  * English
-  * French
-  * German
-  * Greek
-  * Hindi
-  * Japanese
-  * Spanish
-  * Tamil
-  * Telugu
+# English to Japanese Translator
 
-* More languages can be added easily by modifying index.html
-  * For example, to add Polish, use this:<br>
-    ```<option value="pl">Polish</option>```
-  
-* Uses Google Translate API (free version)
+A modern web-based English to Japanese translator with Romaji conversion and text-to-speech capabilities.
 
-* Try it out! ---> [Click Me](https://codepen.io/Troy_8D/full/jOQZQme)
+[Translator Screenshot]
+![Uploading image.png…]()
 
-# Output (Desktop View)
-<p align="center">
-<img src="https://github.com/DarshanRaoG/Language-Translator-Web-App/blob/main/img/output1.JPG" width="70%" >
-<img src="https://github.com/DarshanRaoG/Language-Translator-Web-App/blob/main/img/output2.jpg" width="70%" >
-<img src="https://github.com/DarshanRaoG/Language-Translator-Web-App/blob/main/img/output25.png" width="70%" >
-</p>
 
-# Output (Mobile View)
-<p align="center">
-<img src="https://github.com/DarshanRaoG/Language-Translator-Web-App/blob/main/img/output3.JPG" width="320px" height="575px">
-<img src="https://github.com/DarshanRaoG/Language-Translator-Web-App/blob/main/img/output5.jpg" width="320px" height="575px">
-<img src="https://github.com/DarshanRaoG/Language-Translator-Web-App/blob/main/img/output6.jpg" width="320px" height="575px">
-</p>
 
-# References
-* https://cloud.google.com/translate/docs
-* https://www.w3schools.com/
-* https://developer.mozilla.org/en-US/
-* https://stackoverflow.com/
+## Features
+
+- 🔤 English to Japanese translation
+- 🗣️ Text-to-speech for both English and Japanese
+- ✨ Romaji conversion (Japanese text to Latin alphabet)
+- 📋 One-click copy functionality
+- 🌓 Dark/Light theme with auto-save preference
+- 📱 Fully responsive design for mobile devices
+- 🎯 Touch-optimized for mobile users
+
+## Technologies Used
+
+- HTML5
+- CSS3
+- JavaScript (ES6+)
+- [WanaKana](https://github.com/WaniKani/WanaKana) - Japanese text transliteration
+- [Google Translate API](https://cloud.google.com/translate)
+- [Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API)
+- [Font Awesome](https://fontawesome.com/) - Icons
+
+## Live Demo
+
+[View Live Demo](https://your-demo-link.com)
+
+## Setup
+
+1. Clone the repository:
+```bash
+git clone https://github.com/your-username/english-japanese-translator.git
+```
+
+2. Navigate to the project directory:
+```bash
+cd english-japanese-translator
+```
+
+3. Open `index.html` in your web browser or use a local server:
+```bash
+python -m http.server 8000
+```
+
+## Usage
+
+1. Enter English text in the input field
+2. Click "Translate" to see the Japanese translation
+3. The Romaji (Latin alphabet) version will appear automatically
+4. Use the speaker icons to hear the pronunciation
+5. Use copy icons to copy text to clipboard
+6. Toggle dark/light theme using the moon/sun icon
+
+## Mobile Features
+
+- Optimized touch interactions
+- Haptic feedback for actions
+- Improved keyboard handling
+- Auto-scroll to active input
+- Prevented unwanted zoom on iOS
+
+## Browser Support
+
+- Chrome (recommended)
+- Firefox
+- Safari
+- Edge
+- Opera
+
+## Known Limitations
+
+- Requires internet connection for translation
+- Character limit based on Google Translate API restrictions
+- Text-to-speech may vary by browser and device
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+## Acknowledgments
+
+- [WanaKana](https://github.com/WaniKani/WanaKana) for Romaji conversion
+- [Google Translate](https://translate.google.com) for translation service
+- [Font Awesome](https://fontawesome.com) for icons
+
+## Contact
+
+Your Name - [@your_twitter](https://twitter.com/your_twitter)
+
+Project Link: [https://github.com/your-username/english-japanese-translator](https://github.com/your-username/english-japanese-translator)
