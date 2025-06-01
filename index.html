@@ -1,72 +1,57 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>MyTranslator</title>
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
-        <div class = "main-container">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EigoNihongo - English to Japanese Translator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="main-container">
+    <h1 class="app-title">EigoNihongo – English to Japanese Translator</h1>
 
-            <div class = "dropdown">
-               
-                <select id="source-languages">
-                    <option value="zh">Chinese</option>
-                    <option value="en" selected>English</option>
-                    <option value="fr">French</option>  
-                    <option value="de">German</option>
-                    <option value="el">Greek</option>
-                    <option value="hi">Hindi</option>
-                    <option value="ja">Japanese</option>
-                    <option value="es">Spanish</option>
-                    <option value="ta">Tamil</option>  
-                    <option value="te">Telugu</option>
-                    
-                </select>
+    <div class="dropdown">
+      <select id="source-languages">
+        <option value="en" selected>English</option>
+      </select>
 
-                <button class="switch-button"><img id="switcher" src="https://creazilla-store.fra1.digitaloceanspaces.com/emojis/57902/left-right-arrow-emoji-clipart-sm.png" alt="switch icon" /></button>
+      <button class="switch-button" title="Swap Languages" disabled>
+        <img id="switcher" src="https://creazilla-store.fra1.digitaloceanspaces.com/emojis/57902/left-right-arrow-emoji-clipart-sm.png" alt="switch icon" />
+      </button>
 
-                <select id="target-languages">
+      <select id="target-languages">
+        <option value="ja" selected>Japanese</option>
+      </select>
+    </div>
 
-                    <option value="zh">Chinese</option>
-                    <option value="en">English</option>
-                    <option value="fr">French</option>  
-                    <option value="de">German</option>
-                    <option value="el">Greek</option>
-                    <option value="hi" selected>Hindi</option>
-                    <option value="ja">Japanese</option>
-                    <option value="es">Spanish</option>
-                    <option value="ta">Tamil</option>  
-                    <option value="te">Telugu</option>
-                
-                </select>
+    <div class="text-container">
+      <div class="source-container">
+        <textarea class="input" placeholder="Enter English text here..."></textarea>
+        <button id="translate-button">Translate</button>
+      </div>
 
-            </div>
+      <div class="target-container">
+        <textarea class="output" placeholder="Translation will appear here..." readonly></textarea>
 
-            <div class="text-container">
+        <!-- 🔊 Speak Button -->
+        <button id="speak-button">🔊 Speak (Japanese)</button>
 
-                <div class = "source-container">
-            
-                    <textarea class = "input" placeholder="Enter text..."></textarea>
-        
-                    <button id="translate-button">Translate</button>
+        <!-- 🌐 Google Translate Romanji Link -->
+        <a id="romanjiLink" href="#" target="_blank">View Romanji on Google Translate</a>
 
-                </div>
-        
-                <div class = "target-container">
-        
-                    <textarea class = "output" placeholder="Translation" readonly></textarea>
-        
-                    <button id="clear-button">Clear Text</button>
-
-                </div>
-            
-            </div>
-
-        <p class="attribution">By Darshan Rao G.</p>
+        <!-- 🆕 Romanji Box -->
+        <div class="romanji-box">
+          <label for="romanjiOutput">Romanji (Pronunciation):</label>
+          <textarea id="romanjiOutput" placeholder="Romanji will appear here..." readonly></textarea>
         </div>
 
-        <script src="translatorScript.js"></script>
-    </body>
-</html>
+        <button id="clear-button">Clear Text</button>
+      </div>
+    </div>
 
-<!-- switch button image src: https://creazilla-store.fra1.digitaloceanspaces.com/emojis/57902/left-right-arrow-emoji-clipart-sm.png -->
+    <p class="attribution">By Ahin Satheesh • <a href="https://github.com/ahinsatheesh1/english-japanese-translator" target="_blank">GitHub</a></p>
+  </div>
+
+  <script src="translatorScript.js"></script>
+</body>
+</html>
