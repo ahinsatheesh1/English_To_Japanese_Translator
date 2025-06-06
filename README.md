@@ -98,8 +98,4 @@ Distributed under the MIT License. See `LICENSE` for more information.
 - [Google Translate](https://translate.google.com) for translation service
 - [Font Awesome](https://fontawesome.com) for icons
 
-## Contact
 
-Your Name - [@your_twitter](https://twitter.com/your_twitter)
-
-Project Link: [https://github.com/your-username/english-japanese-translator](https://github.com/your-username/english-japanese-translator)
